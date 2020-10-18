@@ -1,7 +1,5 @@
 %=======================================================================%
-%                              FEM project                              %
 % Problem - 1D Beam                                                     %   
-% Maheshwaran K J - CB.EN.P2EDN19005                                    %
 %=======================================================================%
 %--------------------------------START----------------------------------%
 tic               % For computing computational time 
@@ -17,7 +15,7 @@ E = 210*10^9;
 %---------------------------Beam properties-----------------------------%
 % Total length
 len = 5;
-% Crossection type
+% Crossection type for MOI calculation
 % Use 'nan' to suppress
     % Square a = [side length]
     a = nan;
@@ -208,7 +206,6 @@ RF = (((E*I)/(len/e)^3) .* K)*D;
 toc
 
 %--------------------------------POST-----------------------------------%
-% !!!!! If graphs are empty after run, comment all axis commands !!!!!
 P1 = (1:2:(e+1)*2)';    % [1,3,5, ..... (e+1)*2] For Disp. and Force.
 P2 = (2:2:(e+1)*2)';    % [2,4,6, ..... (e+1)*2] For Rot. and Moment.
 figure('Name','Displacement');
